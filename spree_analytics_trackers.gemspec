@@ -24,7 +24,6 @@ Gem::Specification.new do |s|
   spree_version = '>= 2.3.4', '< 5.0'
   s.add_dependency 'spree_core', spree_version
   s.add_dependency 'spree_backend', spree_version
-  s.add_dependency 'spree_extension', '0.0.5'
   s.add_dependency 'deface', '~> 1.0'
 
   s.add_development_dependency 'appraisal'
