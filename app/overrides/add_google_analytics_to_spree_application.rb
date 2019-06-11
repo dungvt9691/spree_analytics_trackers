@@ -1,4 +1,4 @@
-if Gem.loaded_specs['spree_core'].version >= Gem::Version.create('3.5.0.alpha')
+if Gem.loaded_specs['spree_core'].version >= Gem::Version.create('2.3.4')
   Deface::Override.new(
     virtual_path: 'spree/layouts/spree_application',
     name: 'add_google_analytics_to_spree_application',
