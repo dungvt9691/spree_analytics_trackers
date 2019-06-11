@@ -12,6 +12,7 @@
     <% end %>
 
     ga('require', 'displayfeatures');
+    ga('require', 'ec');
     <%= yield :google_analytics %>
     ga('send', 'pageview');
   </script>
