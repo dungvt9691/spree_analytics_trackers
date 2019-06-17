@@ -2,7 +2,7 @@
 <script>
   function addToCart() {
     ga('ec:addProduct', {
-      'id': '<%= j (@product.sku.present? ? @product.sku : @product.variant_id.to_s) %>',  // Product ID (string).
+      'id': '<%= j @product.id %>',  // Product ID (string).
       'name': '<%= j @product.name %>', // Product name (string).
       'category': '<%= j @product.category.try(:name) %>',            // Product category (string).
       'brand': '<%= j @product.brand.try(:name) %>',                // Product brand (string).

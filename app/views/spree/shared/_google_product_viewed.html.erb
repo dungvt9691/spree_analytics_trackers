@@ -5,7 +5,7 @@
     ga('set', '&cu', '<%= current_currency %>');
 
     ga('ec:addProduct', {
-      'id': '<%= j @product.sku.present? ? @product.sku : @product.variant_id %>',
+      'id': '<%= j @product.id %>',
       'name': '<%= j @product.name %>',
       'category': '<%= j @product.category.try(:name) %>',
       'brand': '<%= j @product.brand.try(:name) %>',
