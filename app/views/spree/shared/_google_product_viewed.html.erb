@@ -1,0 +1,19 @@
+<%# more info: https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce %>
+<script>
+  if (typeof ga !== 'undefined') {
+    ga('require', 'ec');
+    ga('set', '&cu', '<%= current_currency %>');
+
+    ga('ec:addProduct', {
+      'id': '<%= j @product.sku.present? ? @product.sku : @product.variant_id %>',
+      'name': '<%= j @product.name %>',
+      'category': '<%= j @product.category.try(:name) %>',
+      'brand': '<%= j @product.brand.try(:name) %>',
+      'variant': '<%= j @product.options_text %>'
+    });
+
+    ga('ec:setAction', 'detail');
+
+    ga('send', 'pageview');
+  }
+</script>
