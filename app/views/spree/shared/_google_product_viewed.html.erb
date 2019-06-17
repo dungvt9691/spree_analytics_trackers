@@ -9,7 +9,6 @@
       'name': '<%= j @product.name %>',
       'category': '<%= j @product.category.try(:name) %>',
       'brand': '<%= j @product.brand.try(:name) %>',
-      'variant': '<%= j @product.options_text %>'
     });
 
     ga('ec:setAction', 'detail');

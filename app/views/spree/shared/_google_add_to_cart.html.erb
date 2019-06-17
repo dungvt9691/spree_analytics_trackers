@@ -1,16 +1,16 @@
 <%# more info: https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce %>
 <script>
-  function addToCart() {
+  function addToCart(product) {
     ga('ec:addProduct', {
-      'id': '<%= j @product.id %>',  // Product ID (string).
-      'name': '<%= j @product.name %>', // Product name (string).
-      'category': '<%= j @product.category.try(:name) %>',            // Product category (string).
-      'brand': '<%= j @product.brand.try(:name) %>',                // Product brand (string).
-      'variant': '<%= j @product.options_text %>',               // Product variant (string).
-      'price': '<%= @product.price %>',
-      'quantity': <%= @product.quantity %>
+      'id': product.id,
+      'name': product.name,
+      'category': product.category,
+      'brand': product.brand,
+      'variant': product.variant,
+      'price': product.price,
+      'quantity': product.qty
     });
-
+    
     ga('ec:setAction', 'add');
     ga('send', 'event', 'UX', 'click', 'add to cart');     // Send data using an event.
   }
