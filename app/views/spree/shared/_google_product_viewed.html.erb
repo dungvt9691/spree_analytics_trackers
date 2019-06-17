@@ -4,7 +4,7 @@
     ga('require', 'ec');
 
     ga('ec:addProduct', {
-      'id': '<%= j @product.id %>',
+      'id': '<%= j @product.id.to_s %>',
       'name': '<%= j @product.name %>',
       'category': '<%= j @product.category.try(:name) %>',
       'brand': '<%= j @product.brand.try(:name) %>',
